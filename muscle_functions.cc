@@ -10,7 +10,7 @@ void MuscleFunctions::calc_m_PED_CEK_PEK (const VectorN& v_seg_init, VectorN& m,
 	constexpr double PEK = Params::PE_K;
 	constexpr double CEK = Params::CE_K;
 	double PED_pm12_factor = 0.6, PED_pm3_factor = 1.0, PED_co_factor = 1.0, PED_isth_factor = 1.5, PED_TB_factor = 1.0;
-	double CEK_pm12_factor = 1.0, CEK_pm3_factor = 1.0, CEK_co_factor = 1.0, CEK_isth_factor = 1.0, CEK_TB_factor = 0.08;//0.15;
+	double CEK_pm12_factor = 1.0, CEK_pm3_factor = 1.0, CEK_co_factor = 1.0, CEK_isth_factor = 1.0, CEK_TB_factor = 0.08;
 	double PED_factor_0, PED_factor_1, PED_factor_i, idx_50, slope, tmp, CEK_factor_0, CEK_factor_1, CEK_factor_i;
 
 	for (int i = 0; i < Params::N; i++) {
@@ -50,7 +50,7 @@ void MuscleFunctions::calc_m_PED_CEK_PEK (const VectorN& v_seg_init, VectorN& m,
 							CEK_factor_0 = CEK_pm3_factor;
 							CEK_factor_1 = CEK_co_factor;
 							idx_50 = Params::PM4_START_NODE + 6 * Params::NODE_NUM_TRANSITION_CO;
-							slope = 40;//30;//20;//15;
+							slope = 40;
 							tmp = std::exp(- (i - idx_50) / slope);
 							PED_factor_i = PED_factor_0 + (PED_factor_1 - PED_factor_0) / (1 + tmp);
 							PE_D[i] = PED_factor_i * std::sqrt(4 * m[i] * PE_K[i]);
