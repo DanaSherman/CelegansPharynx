@@ -28,7 +28,7 @@ void MuscleFunctions::calc_m_PED_CEK_PEK (const VectorN& v_seg_init, VectorN& m,
 					PED_factor_0 = PED_co_factor;
 					PED_factor_1 = PED_isth_factor;
 					idx_50 = Params::ANT_ISTH_START_NODE + 1.5 * Params::NODE_NUM_TRANSITION_CO;
-					slope = 15;//20;//15;
+					slope = 15;
 					tmp = std::exp(- (i - idx_50) / slope);
 					PED_factor_i = PED_factor_0 + (PED_factor_1 - PED_factor_0) / (1 + tmp);
 					PE_D[i] = PED_factor_i * std::sqrt(4 * m[i] * PE_K[i]);
