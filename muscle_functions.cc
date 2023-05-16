@@ -28,7 +28,7 @@ void MuscleFunctions::calc_m_PED_CEK_PEK (const VectorN& v_seg_init, VectorN& m,
 					PED_factor_0 = PED_co_factor;
 					PED_factor_1 = PED_isth_factor;
 					idx_50 = Params::ANT_ISTH_START_NODE + 1.5 * Params::NODE_NUM_TRANSITION_CO;
-					slope = 15;
+					slope = 15;//20;//15;
 					tmp = std::exp(- (i - idx_50) / slope);
 					PED_factor_i = PED_factor_0 + (PED_factor_1 - PED_factor_0) / (1 + tmp);
 					PE_D[i] = PED_factor_i * std::sqrt(4 * m[i] * PE_K[i]);
@@ -93,7 +93,7 @@ double MuscleFunctions::calcK1(int i, double ca_in, boolVecN1* print_in_out) {
 	double pm3_delta  = 0.3E-5;
 	double pm4_delta  =	(Params::FLAT_META_CO == 0) ? - 1.4E-5 : pm3_delta;
 	double isth_delta = 5E-5;
-	double TB_delta   = - 4.5E-5;
+	double TB_delta   = - 4E-5;//- 4.5E-5;
 
 	double delta_K1_B_0, delta_K1_B_1, idx_50, slope, tmp, delta_K1_B;
 
@@ -368,7 +368,7 @@ double MuscleFunctions::calcMLCP_P(int i, double ca_in, double CF, double MLCP_P
 	double pm3_delta  = 0.3E-5;
 	double pm4_delta  =	(Params::FLAT_META_CO == 0) ? - 1.4E-5 : pm3_delta;
 	double isth_delta = 5E-5;
-	double TB_delta   = - 4.5E-5;
+	double TB_delta   = - 4E-5;//- 4.5E-5;
 
 	double delta_K2_ON3_0, delta_K2_ON3_1, idx_50, slope, tmp, delta_K2_ON3;
 
