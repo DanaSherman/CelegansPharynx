@@ -93,7 +93,7 @@ double MuscleFunctions::calcK1(int i, double ca_in, boolVecN1* print_in_out) {
 	double pm3_delta  = 0.3E-5;
 	double pm4_delta  =	(Params::FLAT_META_CO == 0) ? - 1.4E-5 : pm3_delta;
 	double isth_delta = 5E-5;
-	double TB_delta   = - 4E-5;//- 4.5E-5;
+	double TB_delta   = - 4E-5;
 
 	double delta_K1_B_0, delta_K1_B_1, idx_50, slope, tmp, delta_K1_B;
 
@@ -368,7 +368,7 @@ double MuscleFunctions::calcMLCP_P(int i, double ca_in, double CF, double MLCP_P
 	double pm3_delta  = 0.3E-5;
 	double pm4_delta  =	(Params::FLAT_META_CO == 0) ? - 1.4E-5 : pm3_delta;
 	double isth_delta = 5E-5;
-	double TB_delta   = - 4E-5;//- 4.5E-5;
+	double TB_delta   = - 4E-5;
 
 	double delta_K2_ON3_0, delta_K2_ON3_1, idx_50, slope, tmp, delta_K2_ON3;
 
